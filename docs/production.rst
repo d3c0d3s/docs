@@ -81,6 +81,9 @@ for your distro) and create a database and a user::
     psql wger -c "CREATE USER wger WITH PASSWORD 'wger'";
     psql wger -c "GRANT ALL PRIVILEGES ON DATABASE wger to wger";
 
+On Postgres 15 or above need to manually grant privileges to public schema
+    psql wger -c "GRANT ALL ON SCHEMA public TO wger";
+
 You might want or need to edit your ``pg_hba.conf`` file to allow local socket
 connections or similar.
 
